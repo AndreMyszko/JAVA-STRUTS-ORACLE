@@ -6,8 +6,11 @@
 <struts>
 	<package name="productManagement" extends="struts-default">
 		<action name="loginAction" class="action.LoginAction">
-			<result name="success">/welcome.jsp</result>
+			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>
+		</action>
+		<action name="welcomeAction" class="action.WelcomeAction">
+			<result name="success">/welcome.jsp</result>
 		</action>
 	</package>
 </struts>
