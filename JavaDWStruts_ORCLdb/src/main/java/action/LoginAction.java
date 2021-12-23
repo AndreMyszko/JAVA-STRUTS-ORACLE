@@ -1,9 +1,11 @@
 package action;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import dao.LoginDAO;
 import pojo.LoginInfo;
 
-public class LoginAction {
+public class LoginAction extends ActionSupport {
 
 	String userName;
 	String password;

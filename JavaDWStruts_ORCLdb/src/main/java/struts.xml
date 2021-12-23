@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 	
 <struts>
-	<package name="productManagementApp" extends="struts-default">
+	<package name="productManagement" extends="struts-default">
 		<action name="loginAction" class="action.LoginAction">
 			<result name="success">/welcome.jsp</result>
 			<result name="input">/login.jsp</result>
