@@ -16,5 +16,13 @@
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="updateDataAction" class="action.UpdateDataAction">
+			<result name="success">/updateProduct.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="updateAction" class="action.UpdateAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>	
 	</package>
 </struts>
