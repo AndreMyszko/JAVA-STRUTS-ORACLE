@@ -47,7 +47,11 @@
 						<button class="actionBtn">Update</button>
 					</a>
 				</td>
-				<td>DELETE</td>
+				<td>
+					<a href="deleteAction?productId=<s:property value="#product.productId" />">
+						<button class="actionBtn">Delete</button>
+					</a>
+				</td>
 			</tr>
 		</s:iterator>
 	</table>

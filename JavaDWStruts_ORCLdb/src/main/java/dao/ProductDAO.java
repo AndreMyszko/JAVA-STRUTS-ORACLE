@@ -79,5 +79,19 @@ public class ProductDAO {
 		}
 		return status;
 	}
+	
+	public static int deleteProduct(Integer productId) {
+		int status = 0;
+		try {
+			Connection conn = DBUtil.getConnection();
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM C##DEV.TB_PRODUCT WHERE PORD_ID=?");
+			ps.setInt(1, productId);
+			status = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
 
 }
