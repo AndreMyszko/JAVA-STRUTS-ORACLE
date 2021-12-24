@@ -15,6 +15,7 @@
 		<action name="addAction" class="action.AddAction">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="error">/error.jsp</result>
+			<result name="input">/addProduct.jsp</result>
 		</action>
 		<action name="updateDataAction" class="action.UpdateDataAction">
 			<result name="success">/updateProduct.jsp</result>
@@ -23,6 +24,7 @@
 		<action name="updateAction" class="action.UpdateAction">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="error">/error.jsp</result>
+			<result name="input">/updateProduct.jsp</result>
 		</action>	
 		<action name="deleteAction" class="action.DeleteAction">
 			<result name="success" type="redirect">welcomeAction</result>
