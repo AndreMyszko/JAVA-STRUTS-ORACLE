@@ -12,5 +12,9 @@
 		<action name="welcomeAction" class="action.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
 		</action>
+		<action name="addAction" class="action.AddAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 </struts>

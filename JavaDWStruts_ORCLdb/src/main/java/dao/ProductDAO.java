@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -26,6 +27,23 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 		return productList;
+	}
+	
+	public static int addProduct(Product product){
+		int status = 0;
+		try {
+			Connection conn = DBUtil.getConnection();
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO C##DEV.TB_PRODUCT VALUES(?,?,?,?)");
+			ps.setInt(1, product.getProductId());
+			ps.setString(2, product.getProductName());
+			ps.setString(3, product.getProductCategory());
+			ps.setInt(4, product.getProductPrice());
+			status = ps.executeUpdate();
+			DBUtil.closeConnection(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
 	}
 	
 	
