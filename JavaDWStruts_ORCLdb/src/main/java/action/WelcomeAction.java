@@ -1,5 +1,6 @@
 package action;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -17,11 +18,17 @@ public class WelcomeAction extends ActionSupport {
 	private Date createdDate;
 	
 	public void initializeProducts() {
+		//format "createdDate" from Date to String:
+		String createdDateStr="";
+		if (createdDate != null) {
+			SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+			createdDateStr = formatter.format(new Date());			
+		}
 		System.out.println("Filter Data: ");
 		System.out.println("name: " + productName);
 		System.out.println("category: " + productCategory);
 		System.out.println("created: " + createdDate);
-		products = ProductDAO.getAllProducts();
+		products = ProductDAO.getAllProducts(productName, productCategory, createdDateStr);
 	}
 	
 	public String execute() {
