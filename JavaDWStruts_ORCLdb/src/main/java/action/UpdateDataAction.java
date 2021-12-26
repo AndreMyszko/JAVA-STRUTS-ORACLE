@@ -7,10 +7,11 @@ import pojo.Product;
 
 public class UpdateDataAction extends ActionSupport{
 	
-	Integer productId;
-	String productName;
-	String ProductCategory;
-	Integer productPrice;
+	private Integer productId;
+	private String productName;
+	private String ProductCategory;
+	private Integer productPrice;
+	private String createdDate;
 	
 	public String execute() {
 		Product product = ProductDAO.getProductById(productId);
@@ -18,6 +19,7 @@ public class UpdateDataAction extends ActionSupport{
 		productName = product.getProductName();
 		ProductCategory = product.getProductCategory();
 		productPrice = product.getProductPrice();
+		createdDate = product.getCreatedDate();
 		return "success";
 	}
 
@@ -52,5 +54,15 @@ public class UpdateDataAction extends ActionSupport{
 	public void setProductPrice(Integer productPrice) {
 		this.productPrice = productPrice;
 	}
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+	
+	
 	
 }

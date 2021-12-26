@@ -1,5 +1,8 @@
 package action;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.ProductDAO;
@@ -14,7 +17,12 @@ public class AddAction extends ActionSupport{
 	
 	public String execute() {
 		String statusCode = "";
-		Product product = new Product(productId, productName, productCategory, productPrice);
+		
+		//format "createdDate" from Date to String:
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+		String createdDateStr = formatter.format(new Date());
+		
+		Product product = new Product(productId, productName, productCategory, productPrice, createdDateStr);
 		int recordAdded = ProductDAO.addProduct(product);
 		if (recordAdded == 1) {
 			statusCode="success";

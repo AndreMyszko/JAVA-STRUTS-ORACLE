@@ -36,6 +36,7 @@
 				<th>Product Name</th>
 				<th>Product Category</th>
 				<th>Product Price</th>
+				<th>Created Date</th>
 				<th colspan="2">Actions</th>
 			</tr>
 		</thead>
@@ -54,6 +55,10 @@
 				<td>
 					<s:property value="#product.productPrice"/>
 				</td>
+				<td>
+					<s:property value="#product.createdDate"/>
+				</td>
+				
 				<td>
 					<a href="updateDataAction?productId=<s:property value="#product.productId" />">
 						<button class="actionBtn">Update</button>

@@ -12,13 +12,14 @@
 
 	<%@ include file="header.jsp" %>
 
-	<div>
+	<div align="center">
 		<h2>Update Product</h2>
 		<s:form action="updateAction" class="formTable">
 			<s:textfield name="productId" input="Product ID" class="formTextField" readonly="true" />
 			<s:textfield name="productName" input="Product Name" class="formTextField" />
 			<s:textfield name="productCategory" input="Product Category" class="formTextField" />
 			<s:textfield name="productPrice" input="Product Price" class="formTextField" />
+			<s:textfield name="createdDate" input="Created Date" class="formTextField"  readonly="true"/>
 			<s:submit value="Update Product" class="actionBtn" />
 		</s:form>
 	</div>

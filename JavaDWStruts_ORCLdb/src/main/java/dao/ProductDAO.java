@@ -20,7 +20,7 @@ public class ProductDAO {
 			ResultSet rs = st.executeQuery("SELECT * FROM C##DEV.TB_PRODUCT");
 			while (rs.next()) {
 				Product product = new Product(rs.getInt("pord_id"), rs.getString("prod_name"),
-						rs.getString("prod_category"), rs.getInt("prod_price"));
+						rs.getString("prod_category"), rs.getInt("prod_price"), rs.getString("created_date"));
 				productList.add(product);
 			}
 			// DBUtil.closeConnection(conn);
@@ -34,11 +34,12 @@ public class ProductDAO {
 		int status = 0;
 		try {
 			Connection conn = DBUtil.getConnection();
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO C##DEV.TB_PRODUCT VALUES(?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO C##DEV.TB_PRODUCT VALUES(?,?,?,?,?)");
 			ps.setInt(1, product.getProductId());
 			ps.setString(2, product.getProductName());
 			ps.setString(3, product.getProductCategory());
 			ps.setInt(4, product.getProductPrice());
+			ps.setString(5, product.getCreatedDate());
 			status = ps.executeUpdate();
 			// DBUtil.closeConnection(conn);
 		} catch (Exception e) {
@@ -55,7 +56,7 @@ public class ProductDAO {
 			ps.setInt(1, productId);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				product = new Product(rs.getInt("PORD_ID"), rs.getString("prod_name"), rs.getString("prod_category"),rs.getInt("prod_price"));
+				product = new Product(rs.getInt("PORD_ID"), rs.getString("prod_name"), rs.getString("prod_category"),rs.getInt("prod_price"), rs.getString("created_date"));
 			}
 
 		} catch (Exception e) {
