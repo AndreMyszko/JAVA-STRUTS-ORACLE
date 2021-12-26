@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C/DTD HTML 4.01 Trasitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="ISO-8859-1">
 <title>Welcome</title>
 <link rel="stylesheet" href="style.css">
+<sx:head />
 </head>
 <body>
 
@@ -14,9 +16,17 @@
 	
 	<div align="center">
 		<h2>Welcome</h2>
+		<!-- 
 		<a href="addProduct.jsp">
 			<button class="actionBtn">Add New Product</button>
 		</a>
+		-->
+		<s:form action="welcomeAction" class="filterPanel">
+			<s:textfield name="productName" label="ProductName" class="formTextField" />
+			<s:textfield name="productCategory" label="ProductCategory" class="formTextField" />
+			<sx:datetimepicker name="createdDate" label="Created Date" displayFormat="dd-MMM-yyyy"></sx:datetimepicker>
+			<s:submit value="Search Product" class="actionBtn"></s:submit>
+		</s:form>
 	</div>
 	
 	<table width="750" class="productTable" align="center">
