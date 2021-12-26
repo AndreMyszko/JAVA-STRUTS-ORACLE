@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	<%@ include file="header.jsp" %>
+
 	<h3>There was some error</h3>
 
 </body>

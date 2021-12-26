@@ -10,6 +10,8 @@
 </head>
 <body>
 
+	<%@ include file="header.jsp" %>
+
 	<div>
 		<h2>Update Product</h2>
 		<s:form action="updateAction" class="formTable">
